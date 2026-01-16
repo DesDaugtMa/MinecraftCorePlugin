@@ -1,5 +1,9 @@
 DesDaugtMa\core\Core.class
-DesDaugtMa\core\ColorUtil.class
+DesDaugtMa\core\RestartCommand.class
+DesDaugtMa\core\RestartTimer.class
 DesDaugtMa\core\TablistUpdater.class
 DesDaugtMa\core\TPSUtil.class
 DesDaugtMa\core\TimeUtil.class
+DesDaugtMa\core\AutoRestartScheduler.class
+DesDaugtMa\core\ColorUtil.class
+DesDaugtMa\core\RestartManager.class

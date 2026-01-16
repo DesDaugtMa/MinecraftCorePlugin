@@ -6,13 +6,22 @@ public final class Core extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        // 1. Starte den TPS Rechner
-        // Wir lassen ihn alle 20 Ticks (ca. 1 Sekunde) laufen, um zu messen
-        new TPSUtil().runTaskTimer(this, 0L, 20L);
+        // 1. Config laden (erstellt config.yml, falls nicht vorhanden)
+        saveDefaultConfig();
 
-        // 2. Starte den TabList Updater
-        // Alle 20 Ticks (1 Sekunde) reicht für die Anzeige
+        // 2. Manager initialisieren
+        RestartManager restartManager = new RestartManager(this);
+
+        // 3. Tasks starten
+        new TPSUtil().runTaskTimer(this, 0L, 20L);
         new TablistUpdater().runTaskTimer(this, 0L, 20L);
+
+        // Der AutoRestartScheduler prüft jede Sekunde (20 Ticks) die Uhrzeit
+        // Man könnte auch 1200L (60 Sek) nehmen, aber 20L ist präziser beim Serverstart
+        new AutoRestartScheduler(this, restartManager).runTaskTimer(this, 20L, 20L);
+
+        // 4. Command registrieren (Wir übergeben den Manager!)
+        getCommand("neustart").setExecutor(new RestartCommand(restartManager));
 
         getLogger().info("SimpleTabList wurde aktiviert!");
     }

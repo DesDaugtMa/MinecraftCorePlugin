@@ -1,0 +1,5 @@
+# Einstellungen für den automatischen Neustart
+auto-restart:
+  enabled: true
+  time: "05:30" # Uhrzeit im Format HH:mm (24 Stunden)
+  countdown-seconds: 1800 # 10 Minuten Countdown
