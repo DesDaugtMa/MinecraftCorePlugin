@@ -12,3 +12,7 @@ commands:
     description: Setzt den globalen Spawnpunkt.
     usage: /setspawn
     permission: core.setspawn
+  core:
+    description: Hauptbefehl für das Plugin.
+    usage: /core reload
+    permission: simpletablist.admin

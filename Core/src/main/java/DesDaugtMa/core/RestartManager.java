@@ -1,31 +1,28 @@
 package DesDaugtMa.core;
 
-import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class RestartManager {
 
     private final JavaPlugin plugin;
+    private final MessageManager messageManager; // Referenz
     private RestartTimer currentTimer;
 
-    public RestartManager(JavaPlugin plugin) {
+    // Konstruktor geändert!
+    public RestartManager(JavaPlugin plugin, MessageManager messageManager) {
         this.plugin = plugin;
+        this.messageManager = messageManager;
     }
 
-    // Startet oder Aktualisiert den Neustart
     public void startRestart(int seconds) {
-        // Falls schon einer läuft: Stoppen (für Update)
         if (isRunning()) {
             currentTimer.cancel();
         }
-
-        // Neuen Timer erstellen
-        currentTimer = new RestartTimer(seconds);
+        // Wir übergeben den MessageManager auch an den Timer!
+        currentTimer = new RestartTimer(seconds, messageManager);
         currentTimer.runTaskTimer(plugin, 0L, 20L);
     }
 
-    // Bricht den Neustart ab
     public void cancelRestart() {
         if (isRunning()) {
             currentTimer.cancel();
@@ -33,7 +30,6 @@ public class RestartManager {
         }
     }
 
-    // Prüft, ob ein Neustart läuft
     public boolean isRunning() {
         return currentTimer != null && !currentTimer.isCancelled();
     }

@@ -1,6 +1,5 @@
 package DesDaugtMa.core;
 
-import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -9,30 +8,29 @@ import org.bukkit.entity.Player;
 public class SpawnCommand implements CommandExecutor {
 
     private final SpawnManager spawnManager;
+    private final MessageManager msg;
 
-    public SpawnCommand(SpawnManager spawnManager) {
+    public SpawnCommand(SpawnManager spawnManager, MessageManager messageManager) {
         this.spawnManager = spawnManager;
+        this.msg = messageManager;
     }
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-
         if (!(sender instanceof Player)) {
-            sender.sendMessage(ChatColor.RED + "Dieser Befehl ist nur für Spieler!");
+            msg.send(sender, "not-a-player");
             return true;
         }
 
         Player player = (Player) sender;
 
         if (!player.hasPermission("simpletablist.setspawn")) {
-            player.sendMessage(ChatColor.RED + "Dazu hast du keine Rechte!");
+            msg.send(player, "no-permission");
             return true;
         }
 
-        // Location holen und speichern
         spawnManager.setSpawn(player.getLocation());
-
-        player.sendMessage(ChatColor.GREEN + "Spawnpunkt erfolgreich gesetzt!");
+        msg.send(player, "spawn-set");
 
         return true;
     }

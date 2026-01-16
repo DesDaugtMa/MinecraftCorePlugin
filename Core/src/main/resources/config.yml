@@ -10,3 +10,83 @@ spawn:
   z: -318.49731262409773
   yaw: -89.69883
   pitch: 0.14999898
+
+# --- Nachrichten Konfiguration ---
+# Du kannst Farbcodes mit '&' nutzen (z.B. &c für Rot).
+# %prefix% wird automatisch durch den Prefix ersetzt.
+
+prefix: "&8[&eSystem&8] &7"
+
+messages:
+  # Allgemeine Fehler
+  no-permission:
+    enabled: true
+    text: "%prefix%&cDazu hast du keine Rechte!"
+  not-a-player:
+    enabled: true
+    text: "%prefix%&cDieser Befehl ist nur für Spieler!"
+  invalid-number:
+    enabled: true
+    text: "%prefix%&cDas ist keine gültige Zahl!"
+
+  # Neustart Befehl (/neustart)
+  restart-started:
+    enabled: true
+    text: "%prefix%&aNeustart-Countdown (%seconds%s) gestartet!"
+  restart-updated:
+    enabled: true
+    text: "%prefix%&eCountdown aktualisiert auf &6%seconds%s&e!"
+  restart-aborted-sender:
+    enabled: true
+    text: "%prefix%&aTimer erfolgreich gestoppt."
+  restart-no-timer:
+    enabled: true
+    text: "%prefix%&cEs läuft aktuell kein Neustart-Countdown."
+
+  # Neustart Timer (Broadcasts, Titel, Actionbar)
+  restart-broadcast-countdown:
+    enabled: true
+    text: "&c&lDer Server startet in &e%time% &c&lneu!"
+  restart-broadcast-now:
+    enabled: true
+    text: "&c&lDer Server startet nun neu!"
+  restart-broadcast-aborted:
+    enabled: true
+    text: "%prefix%&aDer geplante Neustart wurde abgebrochen!"
+
+  # Titel & Actionbar
+  # Actionbar aktualisiert sich jede Sekunde
+  restart-actionbar:
+    enabled: true
+    text: "&c&lNeustart &r&7in &e%time%"
+
+  restart-title:
+    enabled: true
+    text: "&c&lNeustart"
+  restart-subtitle:
+    enabled: true
+    text: "&7Neustart in &e%time%"
+
+  # Spawn (/setspawn)
+  spawn-set:
+    enabled: true
+    text: "%prefix%&aSpawnpunkt erfolgreich gesetzt!"
+
+  # Stop Befehl (/stop Override)
+  stop-blocked:
+    enabled: true
+    text: "%prefix%&cDer Befehl /stop ist deaktiviert. Nutze &6/neustart <Zeit>&c."
+  stop-console-blocked:
+    enabled: true
+    text: "&cDer /stop Befehl wurde blockiert. Nutze /neustart."
+  stop-custom-executed:
+    enabled: true
+    text: "%prefix%&aAutostart deaktiviert. Server fährt herunter..."
+
+    # Core Befehl (/core reload)
+  reload-success:
+    enabled: true
+    text: "%prefix%&aDie Konfiguration wurde erfolgreich neu geladen!"
+  unknown-subcommand:
+    enabled: true
+    text: "%prefix%&cUnbekannter Unterbefehl. Nutze: &6/core reload"
