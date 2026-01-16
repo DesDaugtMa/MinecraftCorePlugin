@@ -11,6 +11,12 @@ spawn:
   yaw: -89.69883
   pitch: 0.14999898
 
+motd:
+  enabled: true
+  centered: true
+  line-1: "&e&lSurvival Server &7x &f[&a1.21.8&f]"
+  line-2: ""
+
 # --- Nachrichten Konfiguration ---
 # Du kannst Farbcodes mit '&' nutzen (z.B. &c für Rot).
 # %prefix% wird automatisch durch den Prefix ersetzt.

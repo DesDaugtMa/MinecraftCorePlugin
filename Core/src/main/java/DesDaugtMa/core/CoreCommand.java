@@ -9,11 +9,14 @@ public class CoreCommand implements CommandExecutor {
     private final Core plugin;
     private final MessageManager msg;
     private final AutoRestartScheduler autoRestartScheduler;
+    private final MotdManager motdManager; // NEU
 
-    public CoreCommand(Core plugin, MessageManager msg, AutoRestartScheduler scheduler) {
+    // Konstruktor erweitert
+    public CoreCommand(Core plugin, MessageManager msg, AutoRestartScheduler scheduler, MotdManager motdManager) {
         this.plugin = plugin;
         this.msg = msg;
         this.autoRestartScheduler = scheduler;
+        this.motdManager = motdManager;
     }
 
     @Override
@@ -29,16 +32,13 @@ public class CoreCommand implements CommandExecutor {
             return true;
         }
 
-        // Subcommand: reload
         if (args[0].equalsIgnoreCase("reload")) {
-            // 1. Config von der Festplatte neu laden
+            // 1. Bukkit Config reload
             plugin.reloadConfig();
 
-            // 2. Klassen aktualisieren, die Werte cachen
+            // 2. Manager aktualisieren
             autoRestartScheduler.loadSettings();
-
-            // (MessageManager, SpawnManager und TabListUpdater lesen live aus der Config,
-            // daher müssen wir die nicht explizit reloaden, reloadConfig() reicht dort.)
+            motdManager.reload(); // NEU: MOTD neu berechnen (Zentrierung etc.)
 
             msg.send(sender, "reload-success");
             return true;
