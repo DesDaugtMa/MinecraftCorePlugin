@@ -8,3 +8,7 @@ commands:
     description: Startet den Server nach einer angegebenen Zeit neu.
     usage: /neustart <Sekunden>
     permission: core.restart
+  setspawn:
+    description: Setzt den globalen Spawnpunkt.
+    usage: /setspawn
+    permission: core.setspawn

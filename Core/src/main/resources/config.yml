@@ -3,3 +3,10 @@ auto-restart:
   enabled: true
   time: "05:30" # Uhrzeit im Format HH:mm (24 Stunden)
   countdown-seconds: 1800 # 10 Minuten Countdown
+spawn:
+  world: world
+  x: 39.45422781391139
+  y: 88.5
+  z: -318.49731262409773
+  yaw: -89.69883
+  pitch: 0.14999898
