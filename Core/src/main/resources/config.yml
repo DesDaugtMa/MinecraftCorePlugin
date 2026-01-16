@@ -15,43 +15,43 @@ spawn:
 # Du kannst Farbcodes mit '&' nutzen (z.B. &c für Rot).
 # %prefix% wird automatisch durch den Prefix ersetzt.
 
-prefix: "&8[&eSystem&8] &7"
+prefix: "&eCore &8» &7"
 
 messages:
   # Allgemeine Fehler
   no-permission:
     enabled: true
-    text: "%prefix%&cDazu hast du keine Rechte!"
+    text: "%prefix%&cKeine Berechtigung"
   not-a-player:
     enabled: true
-    text: "%prefix%&cDieser Befehl ist nur für Spieler!"
+    text: "%prefix%&cDieser Befehl ist nur für Spieler"
   invalid-number:
     enabled: true
-    text: "%prefix%&cDas ist keine gültige Zahl!"
+    text: "%prefix%&cDas ist keine gültige Zahl"
 
   # Neustart Befehl (/neustart)
   restart-started:
-    enabled: true
+    enabled: false
     text: "%prefix%&aNeustart-Countdown (%seconds%s) gestartet!"
   restart-updated:
-    enabled: true
+    enabled: false
     text: "%prefix%&eCountdown aktualisiert auf &6%seconds%s&e!"
   restart-aborted-sender:
-    enabled: true
+    enabled: false
     text: "%prefix%&aTimer erfolgreich gestoppt."
   restart-no-timer:
     enabled: true
-    text: "%prefix%&cEs läuft aktuell kein Neustart-Countdown."
+    text: "%prefix%&cEs läuft aktuell kein Neustart-Countdown"
 
   # Neustart Timer (Broadcasts, Titel, Actionbar)
   restart-broadcast-countdown:
-    enabled: true
+    enabled: false
     text: "&c&lDer Server startet in &e%time% &c&lneu!"
   restart-broadcast-now:
-    enabled: true
+    enabled: false
     text: "&c&lDer Server startet nun neu!"
   restart-broadcast-aborted:
-    enabled: true
+    enabled: false
     text: "%prefix%&aDer geplante Neustart wurde abgebrochen!"
 
   # Titel & Actionbar
@@ -70,23 +70,23 @@ messages:
   # Spawn (/setspawn)
   spawn-set:
     enabled: true
-    text: "%prefix%&aSpawnpunkt erfolgreich gesetzt!"
+    text: "%prefix%&aSpawnpunkt erfolgreich gesetzt"
 
   # Stop Befehl (/stop Override)
   stop-blocked:
-    enabled: true
+    enabled: false
     text: "%prefix%&cDer Befehl /stop ist deaktiviert. Nutze &6/neustart <Zeit>&c."
   stop-console-blocked:
-    enabled: true
+    enabled: false
     text: "&cDer /stop Befehl wurde blockiert. Nutze /neustart."
   stop-custom-executed:
-    enabled: true
+    enabled: false
     text: "%prefix%&aAutostart deaktiviert. Server fährt herunter..."
 
     # Core Befehl (/core reload)
   reload-success:
     enabled: true
-    text: "%prefix%&aDie Konfiguration wurde erfolgreich neu geladen!"
+    text: "%prefix%&aDie Konfiguration wurde erfolgreich neu geladen"
   unknown-subcommand:
     enabled: true
-    text: "%prefix%&cUnbekannter Unterbefehl. Nutze: &6/core reload"
+    text: "%prefix%&cUnbekannter Befehl"
