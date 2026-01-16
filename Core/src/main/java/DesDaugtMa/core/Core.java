@@ -10,7 +10,7 @@ public final class Core extends JavaPlugin {
 
         // --- Manager ---
         RestartManager restartManager = new RestartManager(this);
-        SpawnManager spawnManager = new SpawnManager(this); // NEU
+        SpawnManager spawnManager = new SpawnManager(this);
 
         // --- Tasks ---
         new TPSUtil().runTaskTimer(this, 0L, 20L);
@@ -19,11 +19,12 @@ public final class Core extends JavaPlugin {
 
         // --- Commands ---
         getCommand("neustart").setExecutor(new RestartCommand(restartManager));
-        getCommand("setspawn").setExecutor(new SpawnCommand(spawnManager)); // NEU
+        getCommand("setspawn").setExecutor(new SpawnCommand(spawnManager));
 
         // --- Listeners ---
-        // Events müssen registriert werden, damit sie feuern
-        getServer().getPluginManager().registerEvents(new SpawnListener(spawnManager), this); // NEU
+        getServer().getPluginManager().registerEvents(new SpawnListener(spawnManager), this);
+        // HIER NEU REGISTRIEREN:
+        getServer().getPluginManager().registerEvents(new StopOverrideListener(), this);
 
         getLogger().info("Core (SimpleTabList) wurde aktiviert!");
     }
