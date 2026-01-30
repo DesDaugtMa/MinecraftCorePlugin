@@ -1,5 +1,7 @@
-package DesDaugtMa.core;
+package DesDaugtMa.core.commands;
 
+import DesDaugtMa.core.manager.MessageManager;
+import DesDaugtMa.core.manager.SpawnManager;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;

@@ -1,4 +1,4 @@
-package DesDaugtMa.core;
+package DesDaugtMa.core.util;
 
 import java.text.NumberFormat;
 import java.util.Locale;

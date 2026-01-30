@@ -1,5 +1,6 @@
-package DesDaugtMa.core;
+package DesDaugtMa.core.listeners;
 
+import DesDaugtMa.core.manager.SpawnManager;
 import org.bukkit.Location;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;

@@ -1,4 +1,4 @@
-package DesDaugtMa.core;
+package DesDaugtMa.core.tasks;
 
 import org.bukkit.scheduler.BukkitRunnable;
 

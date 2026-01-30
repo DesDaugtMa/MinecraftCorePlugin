@@ -1,18 +1,12 @@
 name: Core
-version: '1.0-SNAPSHOT'
+version: '1.0'
 main: DesDaugtMa.core.Core
 api-version: '1.21'
-description: Essenzielle Funktionalitäten für den Server
+description: 'Core-Plugin mit Spawn, Tablist und Stop-Schutz.'
 commands:
-  neustart:
-    description: Startet den Server nach einer angegebenen Zeit neu.
-    usage: /neustart <Sekunden>
-    permission: core.restart
   setspawn:
     description: Setzt den globalen Spawnpunkt.
-    usage: /setspawn
-    permission: core.setspawn
+    permission: core.admin
   core:
-    description: Hauptbefehl für das Plugin.
-    usage: /core reload
-    permission: simpletablist.admin
+    description: System-Befehle (Reload).
+    permission: core.admin

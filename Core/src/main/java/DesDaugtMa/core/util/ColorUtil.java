@@ -1,4 +1,4 @@
-package DesDaugtMa.core;
+package DesDaugtMa.core.util;
 
 import net.md_5.bungee.api.ChatColor;
 import java.awt.Color;

@@ -1,5 +1,27 @@
-# Einstellungen für den automatischen Neustart
-auto-restart:
-  enabled: true
-  time: "04:00" # Uhrzeit im Format HH:mm (24 Stunden)
-  countdown-seconds: 600 # 10 Minuten Countdown
+# Core-System Konfiguration
+prefix: "&eCore &8» &7"
+
+spawn:
+  world: world
+  x: 0.0
+  y: 64.0
+  z: 0.0
+  yaw: 0.0
+  pitch: 0.0
+
+messages:
+  no-permission:
+    enabled: true
+    text: "%prefix%&cKeine Berechtigung."
+  not-a-player:
+    enabled: true
+    text: "%prefix%&cNur für Spieler verfügbar."
+  spawn-set:
+    enabled: true
+    text: "%prefix%&aSpawnpunkt erfolgreich gesetzt!"
+  stop-blocked:
+    enabled: true
+    text: "%prefix%&cServer fährt herunter (Autostart deaktiviert)..."
+  reload-success:
+    enabled: true
+    text: "%prefix%&aKonfiguration neu geladen."
