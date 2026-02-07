@@ -49,7 +49,8 @@ public final class Core extends JavaPlugin {
 
     private void registerListeners() {
         getServer().getPluginManager().registerEvents(new SpawnListener(spawnManager), this);
-        getServer().getPluginManager().registerEvents(new StopOverrideListener(messageManager), this);
+        // Hier wurde 'this' als erstes Argument eingefügt:
+        getServer().getPluginManager().registerEvents(new StopOverrideListener(this, messageManager), this);
     }
 
     @Override

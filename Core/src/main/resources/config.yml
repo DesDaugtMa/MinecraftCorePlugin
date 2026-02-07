@@ -9,6 +9,16 @@ spawn:
   yaw: 0.0
   pitch: 0.0
 
+backup:
+  upload-on-restart: true
+  folder-path: "./Backups"  # Pfad, wo dein Backup-Plugin die Zips ablegt
+  google-drive:
+    # Der Pfad zur credentials.json Datei (relativ zum Server-Ordner oder absoluter Pfad)
+    credentials-file: "credentials.json"
+    # Die ID des Ordners in Google Drive, wo die Backups hin sollen
+    folder-id: "DEINE_GOOGLE_DRIVE_ORDNER_ID"
+    application-name: "MinecraftBackupUploader"
+
 messages:
   no-permission:
     enabled: true
@@ -28,3 +38,12 @@ messages:
   reload-success:
     enabled: true
     text: "%prefix%&aKonfiguration neu geladen."
+  backup-upload-start:
+    enabled: true
+    text: "%prefix%&eStarte Backup-Upload zu Google Drive..."
+  backup-upload-success:
+    enabled: true
+    text: "%prefix%&aUpload erfolgreich! Server stoppt nun."
+  backup-upload-fail:
+    enabled: true
+    text: "%prefix%&cUpload fehlgeschlagen! Überprüfe die Konsole. Server stoppt trotzdem."
