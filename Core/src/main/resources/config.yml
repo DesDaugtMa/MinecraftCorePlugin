@@ -22,6 +22,9 @@ messages:
   stop-blocked:
     enabled: true
     text: "%prefix%&cServer fährt herunter (Autostart deaktiviert)..."
+  restart-triggered:
+    enabled: true
+    text: "%prefix%&eServer startet neu (Autostart aktiviert)..."
   reload-success:
     enabled: true
     text: "%prefix%&aKonfiguration neu geladen."
